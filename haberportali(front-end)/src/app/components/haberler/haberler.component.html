@@ -1,0 +1,20 @@
+<section class="haberler">
+<div class="container">
+  <h1 class="text-center"> Haberler</h1>
+
+  <div class="row mt-5">
+    <div class="col-lg-3 mb-2" *ngFor="let Icerik of haberler">
+      <div class="box shadow-sm">
+        <h4 class="mt-1">{{Icerik.icerikAdi}}<br>({{Icerik.icerikKatAdi}})</h4>
+        <p class="mt-1">{{Icerik.icerikyazi}}</p>
+        <button class="btn btn-dark btn-sm">Devamını Oku...</button>
+
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+</section>

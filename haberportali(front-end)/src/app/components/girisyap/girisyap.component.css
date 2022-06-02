@@ -1,0 +1,19 @@
+.girisyap
+{
+    background-color: rgb(189, 31, 31);
+    padding: 140px 100px;
+}
+.login
+{
+    background-color: rgb(187, 86, 86);
+    padding: 20px 30px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+@media screen and (max-width:600px) 
+{
+    .uyeol
+{
+    padding: 140px 30px;
+}
+}

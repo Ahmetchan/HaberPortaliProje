@@ -1,0 +1,47 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8">
+      <form #urunForm="ngForm" (ngSubmit)="Kaydet()" *ngIf="islem==1">
+        <div class="card">
+          <div class="card-header text-white bg-primary">
+            <h3>Haber Güncelle</h3>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label>Haber Adı</label>
+              <input type="text" name="urunAdi" #icerikAdi ngModel [(ngModel)]="secIcerik.icerikAdi" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Haber İçeriği</label>
+              <input type="tex-area" name="urunfiyati" #icerikyazi ngModel [(ngModel)]="secIcerik.icerikyazi"
+                class="form-control">
+            </div>
+          </div>
+          <div class="card-footer">
+            <input type="submit" value="Kaydet" class="btn btn-success">
+            <button class="btn btn-primary ml-2" [routerLink]="['/']">İptal</button>
+          </div>
+        </div>
+      </form>
+
+      <div class="card" *ngIf="islem==2">
+        <div class="card-header text-white bg-danger">
+          <h3>Ürün Sil</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <b>Ürün Adı : </b>
+            {{secIcerik.icerikAdi}}
+          </div>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-danger" (click)="Sil()">Sil</button>
+          <button class="btn btn-primary ml-2" [routerLink]="['/']">İptal</button>
+        </div>
+      </div>
+
+      <div [ngClass]="sonuc.islem? 'alert alert-success':'alert alert-danger'" *ngIf="sonuc.mesaj?.length">
+        {{sonuc.mesaj}}</div>
+    </div>
+  </div>
+</div>

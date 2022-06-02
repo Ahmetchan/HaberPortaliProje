@@ -1,0 +1,21 @@
+{
+  "targets": {
+    "haberfire": {
+      "hosting": {
+        "InternetProg": [
+          "haberfire"
+        ]
+      }
+    },
+    "haberportali-a5854": {
+      "hosting": {
+        "InternetProg": [
+          "haberportali-a5854"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "haberportali-a5854"
+  }
+}

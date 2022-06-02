@@ -1,0 +1,16 @@
+.navbar
+{
+    background-color: #ffbb00;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+}
+.navbar-light .navbar-nav .nav-item
+{
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+.navbar-light .navbar-nav .nav-item:hover
+{
+    text-decoration: underline;
+}

@@ -1,0 +1,17 @@
+.uyeol
+{
+    background-color: rgb(178, 220, 248);
+    padding: 140px 100px;
+}
+.login
+{
+    background-color: #fff;
+    padding: 20px 30px;
+}
+@media screen and (max-width:600px) 
+{
+    .uyeol
+{
+    padding: 140px 30px;
+}
+}

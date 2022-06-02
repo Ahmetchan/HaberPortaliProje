@@ -1,0 +1,20 @@
+{
+    "kayitlar": [
+      {
+        "id": 913,
+        "adsoyad": "Ahmet",
+        "mail": "ahmet@mail.com",
+        "yas": 21,
+        "kayTarih": "1605632871861",
+        "duzTarih": "1605633331499"
+      },
+      {
+        "id": 498,
+        "adsoyad": "Abdülkadir KOÇER",
+        "mail": "abdulk@mail.com",
+        "yas": 39,
+        "kayTarih": "1605632909141",
+        "duzTarih": "1605633355182"
+      }
+    ]
+  }

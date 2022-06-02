@@ -1,0 +1,100 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <h4><strong>Haberler</strong></h4>
+            <table class="table table-hover">
+                <thead>
+                    <th>Id</th>
+                    <th>Içerik Adı</th>
+                    <th>İçerik Yazı</th>
+                    <th>Kategori Adı</th>
+                    <th>Düzenle</th>
+                    <th>Sil</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let Icerik of icerikler">
+                        <td>{{Icerik.icerikId}}</td>
+                        <td>{{Icerik.icerikAdi}}</td>
+                        <td>{{Icerik.icerikyazi}}</td>
+                        <td>{{Icerik.icerikKatAdi}}</td>
+                        <td><button class="btn btn-success">Yükle</button></td>
+                        <td><button class="btn btn-warning btn-sm"  [routerLink]="['/haberduzenlesil',Icerik.icerikId,1]">Düzenle</button></td>
+                        <td><button class="btn btn-danger btn-sm" [routerLink]="['/haberduzenlesil',Icerik.icerikId,2]">Sil</button></td>
+                    </tr>
+                </tbody>
+            </table>
+             <h4>Haber Ekle</h4>
+            <div class="formm-group">
+                <label for="">Haber Adı</label>
+                <input type="text" class="form-control" #icerikadi>
+            </div>
+            <div class="formm-group">
+                <label for="">Haber İçeriği</label>
+                <input type="text" class="form-control" #icerikyazi>
+            </div>
+            <div class="form-group">
+                <label >Haber Kategorisi</label>
+                <select class="form-control" #icerikkatid>
+                    <option *ngFor="let kat of kategoriler"  value="{{kat.katId}}">{{kat.katAdi}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success" (click)="IcerikKaydet(icerikadi.value,icerikyazi.value, icerikkatid.value)">Kaydet</button>
+            </div>
+            <div [ngClass]="icerikSonuc.islem ? 'alert alert-success':'alert alert-danger'" *ngIf="icerikSonuc.mesaj?.length">{{icerikSonuc.mesaj}}</div>
+        </div>
+        <div class="col-md-4">
+            <h4>Kategoriler</h4>
+            <table class="table table-hover">
+                <tbody>
+                    <thead>
+                        <th>Id</th>
+                        <th>Kategori Adı</th>
+                        <th>Düzenle</th>
+                        <th>Sil</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let kategori of kategoriler">
+                            <td>{{kategori.katId}}</td>
+                            <td>{{kategori.katAdi}}</td>
+                            <td><button class="btn btn-warning btn-sm" [routerLink]="['/katduzenlesil',kategori.katId,1]">Düzenle</button></td>
+                            <td><button class="btn btn-danger btn-sm"  [routerLink]="['/katduzenlesil',kategori.katId,2]">Sil</button></td>
+                        </tr>
+                    </tbody>
+            </table>
+            <h4>Kategori Ekle</h4>
+            <div class="formm-group">
+                <label for="">Kategori Adı</label>
+                <input type="text" class="form-control" #ad>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success" (click)="KategoriKaydet(ad.value)">Kaydet</button>
+            </div>
+            <div [ngClass]="katSonuc.islem ? 'alert alert-success':'alert alert-danger'" *ngIf="katSonuc.mesaj?.length">{{katSonuc.mesaj}}</div>
+        </div>
+    </div>
+</div>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Dosya Yükle</h4>
+      <button class="btn btn-success" >Yükle</button>
+      <h4>Dosya Listele</h4>
+      <table class="table table-hover">
+        <thead>
+          <th>Dosya Adı</th>
+          <th>Sil</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+                profil.jpg
+            </td>
+            <td><button class="btn btn-danger">Sil</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
